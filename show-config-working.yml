@@ -1,6 +1,5 @@
 ---
 - name: Telnet test
-  hosts: localhost
   connection: local
   tasks:
     - name: telnet test
