@@ -6,7 +6,7 @@
 
      tasks:
         - name: show run
-         ios_command:
+          ios_command:
            commands:
            - show run
            - show ip route
