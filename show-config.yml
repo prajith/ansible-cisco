@@ -1,16 +1,11 @@
----
-- hosts: all
-  gather_facts: no
-  connection: local
- 
+- name: run show commands
+  ansible.netcommon.telnet:
+    user: admin
+    password: Awr@008
+    login_prompt: 'Username: '
+    prompts:
+    - '[>#]'
+    command:
+    - terminal length 0
+    - show version
 
-  tasks:
-
-
-  - name: IOS | Show clock
-    ios_command:
-      commands:
-        - show clock
-    register: clock
-
-  - debug: msg="{{ clock.stdout }}"
