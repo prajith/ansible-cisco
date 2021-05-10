@@ -11,8 +11,8 @@
         login_prompt: 'Username: '
         prompts:
                 - '[>#]'
-        user: {{ username }}
-        password: {{ password }}
+        user: admin
+        password: Awr@009
         command:
           - term len 0
           - show ver
