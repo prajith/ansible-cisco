@@ -15,7 +15,7 @@
         password: "{{password}}"
         command:
           - term len 0
-          - show interfaces mtu
+          - show ip interface brief
       register: shell_result
     - debug:
             var: shell_result.output
