@@ -15,4 +15,4 @@
         password: "{{password}}"
         command:
           - term len 0
-          - show ver
+          - show interfaces
