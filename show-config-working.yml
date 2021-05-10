@@ -15,8 +15,7 @@
         password: "{{password}}"
         command:
           - term len 0
-          - show version
-        register: shell_result
+          - show interfaces mtu
+      register: shell_result
     - debug:
-            var: shell_result.stdout_lines
-
+            var: shell_result.output
