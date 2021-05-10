@@ -1,7 +1,9 @@
+
+
+
 - name: run show commands
   ansible.netcommon.telnet:
     user: admin
-    password: Awr@008
     login_prompt: 'Username: '
     prompts:
     - '[>#]'
