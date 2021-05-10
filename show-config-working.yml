@@ -6,7 +6,7 @@
     - name: telnet test
       telnet:
         host: "{{ ansible_host }}"
-        port: 2323
+        port: "{{ port }}"
         send_newline: yes
         login_prompt: 'Username: '
         prompts:
