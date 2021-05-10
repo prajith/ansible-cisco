@@ -1,0 +1,18 @@
+---
+- name: Telnet test
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: telnet test
+      telnet:
+        host: "{{ thost }}"
+        port: 2323
+        send_newline: yes
+        login_prompt: 'Username: '
+        prompts:
+                - '[>#]'
+        user: "{{ username }}"
+        password: "{{password}}"
+        command:
+          - term len 0
+          - show ver
