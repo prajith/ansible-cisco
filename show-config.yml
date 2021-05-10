@@ -1,13 +1,16 @@
+---
+   - name: capture show output
+     hosts: routers
+     gather_facts: no
+     connection: network_cli
 
-
-
-- name: run show commands
-  ansible.netcommon.telnet:
-    user: admin
-    login_prompt: 'Username: '
-    prompts:
-    - '[>#]'
-    command:
-    - terminal length 0
-    - show version
-
+     tasks:
+        - name: show run
+         ios_command:
+           commands:
+           - show run
+           - show ip route
+           - show ip eigrp neighbors
+           - show version
+         register: config
+        - debug: msg="{{ register.stdout }}"
