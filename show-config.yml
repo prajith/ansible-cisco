@@ -1,4 +1,9 @@
 - name: "Demonstrate connecting to switches"
   hosts: all
   gather_facts: no
-
+  tasks:
+  - name: run multiple commands on remote nodes
+  ios_command:
+  - commands: show version
+  - provider: "{{ cli }}"
+  - transport: cli
